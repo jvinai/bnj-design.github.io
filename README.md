@@ -28,7 +28,12 @@ Cette rubrique sera disponible lors du déploiement de la version 0.0.2 de l'app
 
 *********** Détails techniques supplémentaires ***********
 
-- L'application récupère ses dépendences via npm et bower
-- Les tests automatiques sont réalisés via protractor
 - L'application sauvegarde les oeuvres et le panier dans le local storage du navigateur
 - Le site est responsive pour les résolutions inférieures à 1280px de largeur (pour tablettes et mobiles)
+- 
+
+*************** Déploiement ******************
+- L'application récupère ses dépendences via npm et bower
+- Les tests automatiques sont réalisés via protractor
+- l'application est disponible depuis le sous-dossier "app"
+- Visualisation possible à l'adresse suivante : http://bnj-design.github.io/app
