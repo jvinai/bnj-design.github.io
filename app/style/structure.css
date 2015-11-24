@@ -9,10 +9,10 @@ div {
 
 body {
 	background-color: white;
-	margin: 0 auto;
 	border: 1px solid #CCC;
-	height: auto;
 	font-family: 'Arial';
+	
+	margin: 0 auto;
 }
 
 header {
@@ -20,38 +20,42 @@ header {
 	background-size: 100px;
 	background-repeat: no-repeat;
 	background-position: 10px;
+	background-color: #3399FF;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	border-bottom: 1px solid #CCC;
+	
 	top: 0;
 	margin: 0 auto;
 	height: 100px;
 	min-height: 120px;
 	max-height: 120px;
-	background-color: #3399FF;
-	text-align: center;
 	padding-top: 33px;
-	font-size: 30px;
-	color: white;
-	border-bottom: 1px solid #CCC;
+
 	clear: both;
 }
 
 footer {
+	background-image: url("../images/main-logo.png");
+	background-size: 100px;
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-color: #3399FF;
+	text-align: center;	
+	font-size: 30px;
+	color: white;
+	border-top: 1px solid #CCC;
+	
 	bottom: 0;
 	margin: 0 auto;
 	height: 100px;
 	min-height: 120px;
 	max-height: 120px;
-	background-color: #3399FF;
-	text-align: center;
 	padding-top: 33px;
 	padding-bottom:0px;
-	font-size: 30px;
-	color: white;
-	border-top: 1px solid #CCC;
+
 	clear: both;
-	background-image: url("../images/main-logo.png");
-	background-size: 100px;
-	background-repeat: no-repeat;
-	background-position: right center;
 }
 
 body, header, footer {
@@ -71,4 +75,44 @@ body, header, footer {
 		padding-top: 43px;
 		font-size: 20px;
 	}
+}
+
+.clear-both {
+	clear:both;
+}
+
+.message-container {
+	border-radius : 3px;
+	border : 1px solid #DDD;
+	
+	min-width: 60%;
+	max-width: 60%;
+	width: 60%;
+	min-height: 35px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.class-success {
+	color: #5F9147;
+	border: 1px solid #77A95F;
+	background-image: url("../images/icon-success.png");
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: initial;
+	
+	padding-left: 52px;
+	padding-top: 7px;
+}
+
+.class-error {
+	color: red;
+	border: 1px solid red;
+	background-image: url("../images/icon-error.png");
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	background-size: initial;
+	
+	padding-left: 52px;
+	padding-top: 7px;
 }
