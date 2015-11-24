@@ -1,0 +1,48 @@
+<div>
+	<script type="text/ng-template" id="viewCart.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Visualiser mon panier</h3>
+		</div>
+        <div class="modal-body">
+           <div class="cart-table">
+		   		<div class="cart-title"> Vous désirez commander le(s) article(s) suivant(s) :</div>
+				
+				<br/>
+				
+		        <div ng-repeat="book in cart.items track by book.isbn">
+					<input type="checkbox" name="checkBook" ng-model="book.isSelected" ng-change="updateReadyToDelete()" ng-false-value="false" ng-true-value="true"/>
+					<b>{{book.nb}}</b> exemplaire(s) de <b>"{{book.title}}"</b> pour un total de <b>{{book.nb * book.price}} &euro;</b>
+				</div>
+				
+				<br/>
+				
+				<div class="cart-summary"> Le total de votre commande s'élève à <b>{{cart.totalPrice}} &euro;</b> </div>
+				
+				<div ng-show="usedOffer != undefined">
+					<div class="cart-title"> Vous êtes éligible à notre offre spéciale sur cette commande, à savoir : </div>
+
+					<br/>
+
+					<div ng-if="usedOffer.type === CST.TYPE_OFFER_PERCENTAGE">
+						&bull;&emsp;Une remise de <b>{{usedOffer.value}}%</b> sur la totalité de votre panier.
+					</div>
+					<div ng-if="usedOffer.type === CST.TYPE_OFFER_MINUS">
+						&bull;&emsp;Une réduction immédiate en caisse d'un montant de <b>{{usedOffer.value}} &euro;.</b>
+					</div>
+					<div ng-if="usedOffer.type === CST.TYPE_OFFER_SLICE">
+						&bull;&emsp;Une réduction en caisse d'un montant de <b>{{usedOffer.value}} &euro;</b> par tranche de <b>{{usedOffer.sliceValue}} &euro;</b> d'achat.</b>
+					</div>
+
+					<br/>
+
+					<div class="cart-summary"> Avec cette réduction, le total de votre commande s'élève désormais à <b>{{revisedTotalPrice}} &euro;</b> </div>
+			   </div>
+			</div>
+		</div>
+        <div class="modal-footer">
+			<button class="btn btn-info" type="button" ng-click="deleteBooks()" ng-disabled="!readyToDelete">Supprimer la sélection</button>
+			<button class="btn btn-warning" type="button" ng-click="closeCart()">Continuer mes achats</button>
+			<button class="btn btn-primary" type="button" ng-click="validateCart()">Valider mon panier</button>
+		</div>
+	</script>
+</div>

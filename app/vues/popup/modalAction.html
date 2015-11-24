@@ -1,0 +1,16 @@
+<div>
+	<script type="text/ng-template" id="modalAction.html">
+        <div class="modal-header">
+            <h4 ng-show="bookToZoom === undefined" class="modal-title">Information</h4>
+            <h4 ng-show="bookToZoom !== undefined" class="modal-title">Zoom sur : {{bookToZoom.title}}</h4>
+		</div>
+        <div class="modal-body">
+			<div ng-class="{'message-success' : messageMode === CST.MESSAGE_MODE_SUCCESS,
+						    'message-error' : messageMode === CST.MESSAGE_MODE_ERROR}" ng-show="messageMode !== undefined">{{mainMessage}}</div>
+            <div class="zoom-cover" ng-show="bookToZoom !== undefined"><img ng-src="{{bookToZoom.cover}}"></div></div>
+		</div>
+        <div class="modal-footer">
+            <button class="btn btn-info" type="button" ng-click="closeModal()">Continuer</button>
+		</div>
+	</script>
+</div>

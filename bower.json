@@ -1,0 +1,30 @@
+{
+  "name": "henri-potier",
+  "description": "Front-End project for Xebia",
+  "main": "index.html",
+  "authors": [
+    "Benjamin SZATNY"
+  ],
+  "license": "none",
+  "homepage": "https://github.com/BnJ-Design/Henri-Potier",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.14.3",
+    "angular-local-storage": "~0.2.3",
+    "angular-route": "~1.4.8",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.5",
+    "underscore": "~1.8.3"
+  }
+}

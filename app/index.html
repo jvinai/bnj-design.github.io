@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+	
+		<link rel="stylesheet" href="style/structure.css">
+		<link rel="stylesheet" href="style/catalogue.css">
+		<link rel="stylesheet" href="style/cart.css">
+		<link rel="stylesheet" href="style/modal.css">
+		<link rel="stylesheet" href="style/validation.css">
+		
+		<meta charset="UTF-8">
+	</head>
+
+	<header>
+			Ultra Booking, la meilleure solution pour votre bibliothèque
+	</header>
+		
+	<body ng-app="bookApp">
+		<ng-view></ng-view>
+		
+		<!-- vendors -->
+		<script type="application/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="application/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+		<script type="application/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+		<script type="application/javascript" src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+		<script type="application/javascript" src="bower_components/underscore/underscore-min.js"></script>
+
+		<!-- angular app -->
+		<script type="application/javascript" src="scripts/application.js"></script>
+		<!-- angular router -->
+		<script type="application/javascript" src="scripts/router.js"></script>
+
+		<!-- app services -->
+		<script type="application/javascript" src="scripts/services/bookService.js"></script>
+		<script type="application/javascript" src="scripts/services/cartService.js"></script>
+		<script type="application/javascript" src="scripts/services/offerService.js"></script>
+
+		<!-- app constants -->
+		<script type="application/javascript" src="scripts/constantes/constantes.js"></script>
+
+		<!-- anpp controllers -->
+		<script type="application/javascript" src="scripts/controllers/catalogueController.js"></script>
+		<script type="application/javascript" src="scripts/controllers/cartController.js"></script>
+        <script type="application/javascript" src="scripts/controllers/modalController.js"></script>
+		<script type="application/javascript" src="scripts/controllers/validationController.js"></script>
+	</body>
+	
+	<footer>
+		Profitez d'offres sur mesure, faites pour vous !
+	</footer>
+</html>

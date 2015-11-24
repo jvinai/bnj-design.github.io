@@ -1,0 +1,25 @@
+
+
+<div class="main-container">
+	<div class="widget-book" ng-repeat="book in books track by book.isbn">
+		<div class="book-title">{{book.title}}</div>
+		<div class="book-cover" ng-click="zoomCover(book.isbn)"><img ng-src="{{book.cover}}"></div>
+		<!--<div class="book-cover" ng-click="zoomCover(book.isbn)"><img ng-src="/book/images/hp{{$index}}.jpg"></div>-->
+		<div class="book-price">{{book.price}}&nbsp;&euro;</div>
+
+		<div class="select-number-book">
+			<select ng-model="book.nb" ng-options="item for item in tabNbBooks"></select>
+		</div>
+		<div class="book-add-cart" ng-click="addBookToCart(book.isbn)"></div>
+	</div>
+
+	<div class="clear-both"></div>
+</div>
+<div class="cart-container">
+    <div class="cart-view" ng-click="viewCart()">
+        {{cart.nbItems || "0"}} article(s)
+    </div>
+</div>
+
+<div ng-include="'vues/popup/viewCart.html'"></div>
+<div ng-include="'vues/popup/modalAction.html'"></div>

@@ -1,0 +1,9 @@
+.cart-title {
+	font-weight: bold;
+	border-bottom: 1px solid #DDD;
+	padding-bottom: 5px;
+}
+
+.cart-summary {
+	padding-bottom: 15px;
+}

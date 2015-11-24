@@ -1,0 +1,13 @@
+.under-construction {
+	background: url("../images/under-construction.png") no-repeat left center;
+	background-size: contain;
+	background-size: 20%;
+	padding: 115px 0px 0px 220px;
+	min-height: 250px;
+	font-size: 16px;
+	border-right: 0px;
+}
+
+.btn-container-validation {
+	margin-top: 10px;	
+}

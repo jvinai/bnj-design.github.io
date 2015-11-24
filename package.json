@@ -1,0 +1,24 @@
+{
+  "name": "henri-potier",
+  "version": "0.0.1",
+  "description": "Front-End project for Xebia",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BnJ-Design/Henri-Potier.git"
+  },
+  "author": "Benjamin SZATNY",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/BnJ-Design/Henri-Potier/issues"
+  },
+  "homepage": "https://github.com/BnJ-Design/Henri-Potier#readme",
+  "devDependencies": {
+    "bower": "^1.6.5",
+    "gulp": "^3.9.0",
+    "protractor": "^3.0.0"
+  }
+}
