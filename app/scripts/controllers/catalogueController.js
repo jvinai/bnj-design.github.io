@@ -1,6 +1,10 @@
 appModule.controller("CatalogueController", function ($rootScope, $scope, $location, $http, $timeout, $log, BookService, CST, $uibModal, CartService) {
 	"use strict";
 
+	/***********************************************************************************************/
+	/************************************** Declaration ********************************************/
+	/***********************************************************************************************/
+	
 	//list of books
 	$scope.books = undefined;
 	
@@ -13,18 +17,30 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 	//message mode (info, warning, error, success)
 	$scope.messageMode = undefined;
     
+	//book to zoom
     $scope.bookToZoom = undefined;
+	
+	//book to update
+	$scope.bookToUpdate = undefined;
 
 	//available nb books for each book (for v1.0.0 : default 10)
 	$scope.tabNbBooks = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 	
 	//put contants into the scope
 	$scope.CST = CST;
+	
+	/***********************************************************************************************/
+	/***************************************** Events **********************************************/
+	/***********************************************************************************************/
 
 	//capture event from the cart to refresh
 	$rootScope.$on('updateCartEvent', function(event, args) {
 		$scope.cart = CartService.getCart();
 	});
+	
+	/***********************************************************************************************/
+	/************************************* Local Functions *****************************************/
+	/***********************************************************************************************/
 
 	//reset main modal (used for zooming and displaying message)
 	var resetModalAction = function () {
@@ -32,18 +48,27 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 		$scope.mainMessage = undefined;
         $scope.bookToZoom = undefined;
 	};
+	
+	//set a message and open a popup to display it
+	var setMessage = function (mode, msg) {
+		resetModalAction();
 
-	//init method
-	$scope.init = function () {
-		//get books from BookService
-		BookService.getBooks().then(function (response) {
-			$scope.books = angular.copy(response.data);
+		$scope.mainMessage = msg;
+		$scope.messageMode = mode;
+
+		var modalInstance = $uibModal.open({
+			animation: true,
+			scope: $scope,
+			controller: "ModalController",
+			templateUrl: "modalAction.html",
+			size: "",
+			resolve: {}
 		});
-		
-		//get cart from CartService
-		$scope.cart = CartService.getCart();
 	};
-	$scope.init();
+	
+	/***********************************************************************************************/
+	/************************************ Scope Functions ******************************************/
+	/*************************************************************************************************/
 	
 	//Add or update a book to cart
 	$scope.addBookToCart = function(isbn) {
@@ -54,7 +79,7 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 						return item.isbn === isbn;
 					});
 
-					if(bookToUpdate != null){
+					if(bookToUpdate !== undefined){
 						//update the number of the books in the cart
 						bookToUpdate.nb += book.nb;
 
@@ -66,7 +91,7 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 
 						//push the book isbn into the cart
 						$scope.cart.items.push(bookToSet);
-						
+
 						//set a success message
 						setMessage(CST.MESSAGE_MODE_SUCCESS, CST.MESSAGE_ADD_SUCCESS);
 					}
@@ -85,7 +110,7 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 				}
 			}
 		});
-		
+
 		//save the cart to local storage
 		CartService.setCart($scope.cart);
 	};
@@ -101,26 +126,9 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 		});
 
 		modalInstance.result.then(function (selectedItem) {
-			
+
 		}, function () {
 			$log.info("cart closed");
-		});
-	};
-	
-	//set a message and open a popup to display it
-	var setMessage = function (mode, msg) {
-		resetModalAction();
-
-		$scope.mainMessage = msg;
-		$scope.messageMode = mode;
-
-		var modalInstance = $uibModal.open({
-			animation: true,
-			scope: $scope,
-			controller: "ModalController",
-			templateUrl: "modalAction.html",
-			size: "",
-			resolve: {}
 		});
 	};
 	
@@ -142,4 +150,23 @@ appModule.controller("CatalogueController", function ($rootScope, $scope, $locat
 			resolve: {}
 		});
 	}; 
-})
+	
+	/***********************************************************************************************/
+	/*************************************** Init Method *******************************************/
+	/***********************************************************************************************/
+	
+	$scope.init = function () {
+		//get books from BookService
+		BookService.getBooks().then(function (response) {
+			$scope.books = angular.copy(response.data);
+		});
+
+		//get cart from CartService
+		$scope.cart = CartService.getCart();
+	};
+	$scope.init();
+	
+	/***********************************************************************************************/
+	/*********************************** End of Controller *****************************************/
+	/***********************************************************************************************/
+});

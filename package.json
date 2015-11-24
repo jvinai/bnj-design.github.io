@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BnJ-Design/Henri-Potier.git"
+    "url": "git+https://github.com/BnJ-Design/bnj-design.github.io.git"
   },
   "author": "Benjamin SZATNY",
-  "license": "none",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/BnJ-Design/Henri-Potier/issues"
+    "url": "https://github.com/BnJ-Design/bnj-design.github.io/issues"
   },
-  "homepage": "https://github.com/BnJ-Design/Henri-Potier#readme",
+  "homepage": "https://github.com/BnJ-Design/bnj-design.github.io#readme",
   "devDependencies": {
     "bower": "^1.6.5",
     "gulp": "^3.9.0",

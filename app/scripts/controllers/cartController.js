@@ -1,6 +1,10 @@
 appModule.controller('CartController', function ($rootScope, $scope, $timeout, $location, $uibModalInstance, $log, CartService, OfferService, CST, $filter, BookService) {
 	"use strict";
 	
+	/***********************************************************************************************/
+	/************************************** Declaration ********************************************/
+	/***********************************************************************************************/
+	
 	//declare cart
 	$scope.cart = undefined;
 
@@ -18,7 +22,15 @@ appModule.controller('CartController', function ($rootScope, $scope, $timeout, $
 	
 	//set into the scope the constants
 	$scope.CST = CST;
+	
+	/***********************************************************************************************/
+	/***************************************** Events **********************************************/
+	/***********************************************************************************************/
 
+	/***********************************************************************************************/
+	/************************************* Local Functions *****************************************/
+	/***********************************************************************************************/
+	
 	//apply one of the different possible offers
 	var getPriceWithOffer = function (offer) {
 		var toReturn = 0;
@@ -69,6 +81,10 @@ appModule.controller('CartController', function ($rootScope, $scope, $timeout, $
 			$scope.usedOffer = undefined;
 		}
 	};
+	
+	/***********************************************************************************************/
+	/************************************ Scope Functions ******************************************/
+	/***********************************************************************************************/
 
 	//update the boolean readyToDelete when an element is checked/unchecked
 	$scope.updateReadyToDelete = function () {
@@ -122,14 +138,15 @@ appModule.controller('CartController', function ($rootScope, $scope, $timeout, $
 		
 		$uibModalInstance.dismiss('cancel');
 	};
+	
+	/***********************************************************************************************/
+	/*************************************** Init Method *******************************************/
+	/***********************************************************************************************/
 
 	//main controller init method
 	$scope.init = function () {
 		//get cart from the service
 		$scope.cart = CartService.getCart();
-
-		//initialize selectedBooks array
-		$scope.selectedBooks = [];
 
 		//initialise the readyToDelete boolean
 		$scope.readyToDelete = false;
@@ -144,4 +161,8 @@ appModule.controller('CartController', function ($rootScope, $scope, $timeout, $
 	};
 	//launch the init method
 	$scope.init();
-})
+	
+	/***********************************************************************************************/
+	/*********************************** End of Controller *****************************************/
+	/***********************************************************************************************/
+});

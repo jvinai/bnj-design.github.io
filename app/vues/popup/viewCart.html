@@ -42,7 +42,7 @@
         <div class="modal-footer">
 			<button class="btn btn-info" type="button" ng-click="deleteBooks()" ng-disabled="!readyToDelete">Supprimer la sélection</button>
 			<button class="btn btn-warning" type="button" ng-click="closeCart()">Continuer mes achats</button>
-			<button class="btn btn-primary" type="button" ng-click="validateCart()">Valider mon panier</button>
+			<button class="btn btn-primary" type="button" ng-click="validateCart()" ng-disabled="!cart.nbItems > 0">Valider mon panier</button>
 		</div>
 	</script>
 </div>
