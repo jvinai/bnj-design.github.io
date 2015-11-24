@@ -13,4 +13,4 @@ appModule.config(function($routeProvider) {
 	otherwise({
 		redirectTo: "/catalogue"
 	});
-})
+});

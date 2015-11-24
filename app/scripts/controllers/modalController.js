@@ -10,4 +10,4 @@ appModule.controller('ModalController', function ($rootScope, $scope, $uibModalI
     };
     
     
-})
+});

@@ -10,4 +10,4 @@ appModule.config(function (localStorageServiceProvider) {
 		.setStorageCookie(45, "/")
 		.setStorageCookieDomain("")
 		.setNotify(true, true);
-})
+});

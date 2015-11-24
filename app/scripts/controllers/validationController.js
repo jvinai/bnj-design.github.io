@@ -9,4 +9,4 @@ appModule.controller('ValidationController', function ($scope, $log, $location) 
 	$scope.locate = function (path) {
 		$location.path(path);	
 	};
-})
+});

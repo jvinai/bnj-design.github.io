@@ -13,4 +13,4 @@ appModule.constant("CST", {
 	MESSAGE_ADD_ERROR_0: "Merci d'ajouter au moins 1 exemplaire de cet article à votre panier.",
 	ERROR_GET_BOOKS: "Une erreur s'est produite lors de la récupération du catalogue",
 	ERROR_ADD_0_BOOKS: "Vous devez ajouter au moins un exemplaire à votre panier"
-})
+});
