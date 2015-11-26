@@ -37,6 +37,11 @@ Cette rubrique sera disponible lors du déploiement de la version 0.0.2 de l'app
 - L'application récupère ses dépendences via npm et bower
 - l'application est disponible depuis le sous-dossier "app"
 - Visualisation possible à l'adresse suivante : http://bnj-design.github.io/app
+- Procédure :
+  - git clone https://github.com/BnJ-Design/bnj-design.github.io.git
+  - npm install
+  - bower install
+  - executer /app/
 
 ************* Tests automatiques *************
 
